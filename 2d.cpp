@@ -18,6 +18,9 @@ for(int j=0;j<3;j++)
 { 
     cout<<a1[i][j];
    
-}
+}  
+
+maryammmmmmmmm
+
     for ( int i=0; i<5;
      abeeeeeeeeeeeerrrrrrrrraaaaaaaaaaaa
