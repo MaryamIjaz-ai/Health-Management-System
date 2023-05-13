@@ -1,6 +1,11 @@
 #include<iostream>
+<<<<<<< Updated upstream
 #include"user.h"
 #include"patient.h"
+=======
+#include<fstream>
+#include"User.h"
+>>>>>>> Stashed changes
 using namespace std;
 
 class Admin:public user{
