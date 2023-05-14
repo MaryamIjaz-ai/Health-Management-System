@@ -4,6 +4,7 @@
 #include"Admin.h"
 #include"Doctor.h"
 #include"patient.h"
+using namespace std;
 
 
 class Appointment
