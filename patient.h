@@ -6,7 +6,7 @@
 #include "Doctor.h";
 #include "patient.h";
 #include "User.h";
-#include "Hospital.h"
+#include "Hospital.h";
 class Patient:public User{
     string name, cnic;
     public:
