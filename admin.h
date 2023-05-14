@@ -1,3 +1,4 @@
+#pragma once
 #include<iostream>
 <<<<<<< Updated upstream
 #include"user.h"
