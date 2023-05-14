@@ -4,13 +4,7 @@
 #include<fstream>
 #include<sstream>
 #include <string>
-#include "admin.h";
-#include "Appointment.h";
-#include "Doctor.h";
-#include "patient.h";
-#include "User.h";
-#include "Hospital.h";
-using namespace std;
+
 class User{
 private:
 string cnic;

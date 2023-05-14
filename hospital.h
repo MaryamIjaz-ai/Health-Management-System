@@ -1,11 +1,10 @@
 #include<iostream>
 #include<fstream>
-//#include "Admin.h";
+
 #include "Appointment.h";
-#include "Doctor.h";
-#include "Patient.h";
+#include "patient.h";
 #include "User.h";
-//#include "Hospital.h";
+
 using namespace std;
 
 

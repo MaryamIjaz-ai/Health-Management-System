@@ -1,12 +1,18 @@
-#include<iostream>
+
+using namespace std;
+#include <iostream>
+#include<string>
+#include<fstream>
+#include<sstream>
+#include<conio.h>
+#include <chrono>
+#include <thread>
 
 #include "admin.h";
 #include "Appointment.h";
 #include "Doctor.h";
 #include "patient.h";
 #include "User.h";
-#include "Hospital.h";
-using namespace std;
 
 int main()
 {
@@ -345,64 +351,55 @@ do
 				cin >> workingexperience;
 				D.DoctorstoreData(name, cnic, email, phoneno, user_name, pass, workingcity, workinghospital, specification, stime, etime, workingexperience);
 			}
-
-
-		//	else if (choose == 2)
-		//	{
-		//	cout << "     ......................................." << endl;
-		//		cout << "        ***/ Doctor Login /*****" << endl;
-		//		cout << "     ......................................." << endl;
-
-		//		do
-		//		{
-		//			cout << "    Enter Username: ";
-		//			cin >> user_name;
-
-		//			if (D.CheckUsernameDoctor(user_name))
-		//			{
-		//				cout << "    Password (8 characters): ";
-		//				cin >> pass;
-		//			}
-		//		} while (!D.CheckUsernameDoctor(user_name));
-
-		//		do
-		//		{
-		//			if (!D.CheckPasswordDoctor(pass))
-		//			{
-		//				pass = { NULL };
-		//				cout << endl << "    Wrong Password" << endl;
-		//				cout << "    Password (8 characters): ";
-		//				cin >> pass;
-		//			}
-		//		} while (!D.CheckPasswordDoctor(pass));
-
-		//		cout << endl << endl << endl;
-		//		cout << "    1. View Appointments" << endl;
-		//		cout << "    2. Cancel Appointment" << endl;
-
-		//		cout << "    Choose: ";
-		//		cin >> schoose;
-		//		while (schoose < 1 || schoose>2)
-		//		{
-		//			cout << "   Invalid input" << endl;
-		//			cout << "   choose again : " << endl;
-		//			cin >> schoose;
-		//		}
-		//		switch (schoose)
-		//		{
-		//		case 1:
-		//			cout << "    Enter your Name: ";
-		//			cin >> docname;
-		//			App.displayDoctorAppointment(docname);
-
-		//			break;
-		//		case 2:
-		//			//////////////////////////////////////////////////////////////////////////
-
-		//			break;
-		//		default:
-		//			break;
-		//		}
+			else if (choose == 2)
+			{
+			cout << "     ......................................." << endl;
+				cout << "        ***/ Doctor Login /*****" << endl;
+				cout << "     ......................................." << endl
+				do
+				{
+					cout << "    Enter Username: ";
+					cin >> user_name
+					if (D.CheckUsernameDoctor(user_name))
+					{
+						cout << "    Password (8 characters): ";
+						cin >> pass;
+					}
+				} while (!D.CheckUsernameDoctor(user_name))
+				do
+				{
+					if (!D.CheckPasswordDoctor(pass))
+					{
+						pass = { NULL };
+						cout << endl << "    Wrong Password" << endl;
+						cout << "    Password (8 characters): ";
+						cin >> pass;
+					}
+				} while (!D.CheckPasswordDoctor(pass))
+				cout << endl << endl << endl;
+				cout << "    1. View Appointments" << endl;
+				cout << "    2. Cancel Appointment" << endl
+				cout << "    Choose: ";
+				cin >> schoose;
+				while (schoose < 1 || schoose>2)
+				{
+					cout << "   Invalid input" << endl;
+					cout << "   choose again : " << endl;
+					cin >> schoose;
+				}
+				switch (schoose)
+				{
+				case 1:
+					cout << "    Enter your Name: ";
+					cin >> docname;
+					App.displayDoctorAppointment(docname)
+					break;
+				case 2:
+					/////////////////////////////////////////////////////////////////////////
+					break;
+				default:
+					break;
+				}
 
 
 			}
@@ -924,4 +921,3 @@ else if (choice == 2)
 
 
 	} while (choice != 0);
-}
