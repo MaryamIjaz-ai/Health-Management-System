@@ -1,4 +1,0 @@
-anum 1234567890123 kiran 3740597538785 Friday 7 In-Person_Consultation Payment:Done
-
-abeera 1234567890123 Zobia 3216549876542 Saturday 15     In-Person_Consultation Payment:Pending
-maryam 6654654321321 Arooj  Wednesday 10     In-Person_Consultation Payment:Done
