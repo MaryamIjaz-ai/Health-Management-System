@@ -66,7 +66,7 @@ do
 		if (choice == 1)
 		{
 			cout << endl << endl << "     ------------------------------ " << endl;
-			cout << "          WELCOME TO OLADOC  " << endl;
+			cout << "           HOSPITAL MANAGEMENT SYSTEM      " << endl;
 			cout<< "     ------------------------------ " << endl;
 			cout  << "      Do you want to: " << endl;
 			cout << "        1.Register" << endl;
