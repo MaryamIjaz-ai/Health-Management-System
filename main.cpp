@@ -915,23 +915,23 @@ int main()
 				cout << "    Enter Username: ";
 				cin >> user_name;
 
-				if(true)//(A.CheckUsernameAdmin(user_name))
+				if(A.CheckUsernameAdmin(user_name))
 				{
 					cout << "    Password (8 characters): ";
 					cin >> pass;
 				}
-			} while (true); // (!A.CheckUsernameAdmin(user_name));
+			} while  (!A.CheckUsernameAdmin(user_name));
 
 			do
 			{
-				if (true )//!A.CheckPasswordAdmin(pass))
+				if (!A.CheckPasswordAdmin(pass))
 				{
 					pass = { NULL };
 					cout << endl << "    Wrong Password" << endl;
 					cout << "    Password (8 characters): ";
 					cin >> pass;
 				}
-			} while (true); //! A.CheckPasswordAdmin(pass));
+			} while (! A.CheckPasswordAdmin(pass));
 
 			cout << endl << endl << endl;
 
