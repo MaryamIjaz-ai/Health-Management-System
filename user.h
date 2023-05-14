@@ -6,6 +6,7 @@
 using namespace std;
 
 
+
 class user {                           //the main class
 private:
 	string cnic;
