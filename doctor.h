@@ -1,8 +1,11 @@
-#pragma once
 #include<iostream>
-
-#include "User.h"
-#include "Appointment.h"
+#include<fstream>
+#include "admin.h";
+#include "Appointment.h";
+#include "Doctor.h";
+#include "patient.h";
+#include "User.h";
+#include "Hospital.h"
 using namespace std;
 class Doctor : public User         // inheritance from user class
 {
