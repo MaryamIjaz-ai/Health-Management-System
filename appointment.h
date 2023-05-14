@@ -1,11 +1,11 @@
+
 #pragma once
 #include<iostream>
-#include<fstream>
+
 #include"Admin.h"
 #include"Doctor.h"
 #include"patient.h"
-using namespace std;
-
+#include"Payment.h"
 
 class Appointment
 {
@@ -55,40 +55,7 @@ public:
 				return 0;
 			}
 		}
-    
-    else if (mod == "    In-Person_Consultation")
-		{
-			cout << mod << endl;
-			cout << "     Total Bill: 2500rs" << endl;
-			cout << "        1. Pay Online now." << endl;
-			cout << "        2. Pay Later." << endl;
-			cout << "        0. Cancel Appointmnet" << endl;
-			cout << "    Choose: ";
-			cin >> pay;
-			while (pay < 0 || pay>2)
-			{
-				cout << "    Invalid." << endl;
-				cout << "    Choose: ";
-				cin >> pay;
-			}
-			if (pay == 1)
-			{
-				cout << "    Online Payment Completed." << endl << endl;
-				return 1;
-			}
-			else if (pay == 2)
-			{
-				cout << "    Bill: 2500rs" << endl;
-				cout << "    Payment Pending." << endl << endl;
-				return 2;
-			}
-			else if (pay == 0)
-			{
-				return 0;
-			}
-		}
-	}
-else if (mod == "    In-Person_Consultation")
+		else if (mod == "    In-Person_Consultation")
 		{
 			cout << mod << endl;
 			cout << "     Total Bill: 2500rs" << endl;
@@ -155,7 +122,7 @@ else if (mod == "    In-Person_Consultation")
 					cout << "     *Working Days*" << endl;
 					cout << "     1.Monday \n     2.Tuesday \n     3.Wednesday \n     4.Thursday \n     5.Friday \n     6.Saturday" << endl << "    Choose: ";
 					cin >> selday;
-				} while (selday < 1 || selday>6);}
+				} while (selday < 1 || selday>6);
 				if (selday == 1)
 				{
 					day = "Monday";
@@ -241,7 +208,7 @@ else if (mod == "    In-Person_Consultation")
 						appfile << endl;
 					}
 					cout << endl << "    *** Appointment Made Successful ***" << endl;
-					cout << day << "  " << time << "-" << time + 1 << " PM" << "  Payment: Done" << endl;
+					cout << day << "  " << time << "-" << time + 1 << " PM" << "  Payment: Done" << endl << endl;
 				}
 				else if (pay == 2)
 				{
@@ -276,7 +243,7 @@ else if (mod == "    In-Person_Consultation")
 				break;
 			}
 		}
-	
+	}
 
 	void displayDoctorAppointment(string docn)
 	{
@@ -366,8 +333,8 @@ else if (mod == "    In-Person_Consultation")
 		{
 			cout << "    No Appointmnets" << endl << endl;
 		}
-	};
+	}
 
 
 
-
+};
