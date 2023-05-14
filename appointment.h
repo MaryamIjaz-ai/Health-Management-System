@@ -154,7 +154,7 @@ else if (mod == "    In-Person_Consultation")
 					cout << "     *Working Days*" << endl;
 					cout << "     1.Monday \n     2.Tuesday \n     3.Wednesday \n     4.Thursday \n     5.Friday \n     6.Saturday" << endl << "    Choose: ";
 					cin >> selday;
-				} while (selday < 1 || selday>6);
+				} while (selday < 1 || selday>6);}
 				if (selday == 1)
 				{
 					day = "Monday";
@@ -275,7 +275,7 @@ else if (mod == "    In-Person_Consultation")
 				break;
 			}
 		}
-	}
+	
 
 	void displayDoctorAppointment(string docn)
 	{
