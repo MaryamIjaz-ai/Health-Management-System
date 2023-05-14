@@ -1,27 +1,31 @@
 #pragma once
 #include<iostream>
 #include<fstream>
+#include"User.h"
+#include"Appointment.h"
+#include"Payment.h"
 
-#include "Appointment.h";
+class patient :public user // inheritance from user class
+{
+private:
+	string name, cnic;
 
-#include "User.h";
 
-class Patient:public User{
-    string name, cnic;
-    public:
-    patient(){
-        name="";
-        cnic="";
-    }
-    void setpatient(string n,string c){
-        name=n;
-        cnic=c;
-    }
-    void checkPatientDetails(){
-        string word,patientname,patientcnic,patientUsername,patientPassword;
-       
+
+public:
+
+	patient()
+	{
+		name = "";
+		cnic = "";
 	}
-    	void checkPatientDetails()
+	void setPatient(string n, string c)
+	{
+		name = n;
+		cnic = c;
+	}
+
+	void checkPatientDetails()
 	{
 		string word, patientname, patientcnic, patientUsername, patientPassword;
 		fstream doctorfile;
@@ -42,4 +46,5 @@ class Patient:public User{
 
 		}
 	}
+
 };
