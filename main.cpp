@@ -407,5 +407,520 @@ do
 			}
 
 
+    }
+}
+else if (choice == 2)
+		{
+		 cout << endl << endl << "     ------------------------------ " << endl;
+		 cout << "           HOSPITAL MANAGEMENT SYSTEM  " << endl;
+		 cout << "     ------------------------------ " << endl;
+			cout << "    Do you want to: " << endl;
+			cout << "     1.Register" << endl;
+			//cout << "     2.Login" << endl;
+			cout << "    CHOOSE" << endl;
+			cin >> choose;
+			if (choose == 1)
+			{
+				cout << "     ......................................." << endl;
+				cout << "          ***/ Patient Registration /*****" << endl;
+				cout << "     ......................................." << endl;
+				cout << "    Enter name:";
+				cin >> name;
+				cout << "    Enter age:";
+				cin >> age;
+				if (age >= 18)
+				{
+					do
+					{
+						cout << "    Enter CNIC: ";
+						cin >> cnic;
+						while (cnic.length() != 13)
+						{
+							cout << "    --**CNIC not valid**--" << endl;
+							cout << "    Enter CNIC: ";
+							cin >> cnic;
+						}
+					} while (P.CheckCnicPatient(cnic));
+
+
+				}
+
+				cout << "    Username: ";
+				cin >> user_name;
+				cout << "    Password (8 characters): ";
+				while (ch != 13)            //13 is ascci code for enter
+				{
+					ch = _getch();
+					if (ch != 13 && ch != 0)
+					{
+						pass += ch;
+						cout << "*";
+					}
+				}
+
+				//checks for password 
+				for (int i = 0; i < pass.length(); i++)
+				{
+					if (pass[i] >= 65 && pass[i] <= 90)
+					{
+						u_c++;
+					}
+					else if (pass[i] >= 97 && pass[i] <= 122)
+					{
+						l_c++;
+					}
+					else if (pass[i] >= '0' && pass[i] <= '9')
+					{
+						num++;
+					}
+					else
+					{
+						special_char++;
+					}
+				}
+				while (pass.length() != 8 || u_c == 0 || l_c == 0 || num == 0 || special_char == 0)
+				{
+					cout << endl << "    --Password not valid--" << endl;
+
+					if (u_c == 0)
+					{
+						cout << "    --Weak Password--" << endl;
+						cout << "    Add an upper case character" << endl;
+					}
+					else if (l_c == 0)
+					{
+						cout << "    --Weak Password--" << endl;
+						cout << "    Add an lower case character" << endl;
+					}
+					else if (num == 0)
+					{
+						cout << "    --Weak Password--" << endl;
+						cout << "    Add a digit " << endl;
+					}
+					else
+					{
+						cout << "    --Weak Password--" << endl;
+						cout << "    Add a special character" << endl;
+					}
+
+					cout << "    Password: ";
+					while (ch1 != 13)            //13 is ascci code for enter
+					{
+						ch1 = _getch();
+						if (ch1 != 13 && ch1 != 0)
+						{
+							pass += ch1;
+							cout << "*";
+						}
+					}
+				}
+
+				cout << endl << "    Confirm Password: ";
+				while (c != 13)            //13 is ascci code for enter
+				{
+					c = _getch();
+					if (c != 13 && c != 0)
+					{
+						confirm_pass += c;
+						cout << "*";
+					}
+				}
+				for (int i = 0; i < pass.length(); i++)
+				{
+					for (int j = 0; j < confirm_pass.length(); j++)
+					{
+						if (pass[i] != confirm_pass[i])
+						{
+							cout << "    * Passwords do not match *" << endl;
+							cout << "    Confirm Password:";
+							while (c1 != 13)            //13 is ascci code for enter
+							{
+								c1 = _getch();
+								if (c1 != 13 && c1 != 0)
+								{
+									confirm_pass += c1;
+									cout << "*";
+								}
+							}
+
+						}
+					}
+				}
+				P.PatientstoreData(name, cnic, user_name, pass);
+
+				int c, choice1;
+				cout << endl << endl << "    ******// Registration Complete //******" << endl << endl;
+				cout << endl << endl << "     ---------------------------------------- " << endl;
+
+
+                
+				cout << "          WELCOME TO APPOINTMENT SECTION  " << endl;
+				cout << "     ------------------------------------------- " << endl;
+				cout << "    Press:" << endl;
+				cout << "      1. To Book Appointment" << endl;
+				cout << "      2. To view Doctor Details" << endl;
+				cout << "    CHOOSE: ";
+				cin >> c;
+				while (c < 1 || c>2)
+				{
+					cout << "    invalid input " << endl;
+					cout << "    Enter Again: ";
+					cin >> c;
+				}
+				switch (c)
+				{
+				case 1:
+
+
+					cout << endl << "    ////**********////" << endl;
+					cout << "    Press: " << endl;
+					cout << "     1. Select Doctor by Specialisation" << endl;
+					cout << "     2. Select Doctor by City" << endl;
+					cout << "     3. Select Doctor by Hospital" << endl;
+					cout << "   CHOOSE: ";
+					cin >> choice1;
+					while (choice1 < 1 || choice1 > 3)
+					{
+						cout << "    Invalid input" << endl;
+						cout << "    Enter Again: ";
+						cin >> choice1;
+					}
+					if (choice1 == 1)
+					{
+						int schoose;
+						string speciality[4] = { "Gynecologist", "Detmatologist", "Oncologist", "Orthopedic" };
+						string specialization;
+						cout << "    SELECT SPECIFICATION  " << endl;
+						cout << "    Press: " << endl;
+						for (int i = 0; i < 4; i++)
+						{
+							cout << i + 1 << ". " << speciality[i] << endl;
+						}
+						cout << "    CHOOSE: ";
+						cin >> schoose;
+						while (schoose < 1 || schoose>4)
+						{
+							cout << "    Invalid input" << endl;
+							cout << "    Enter Again: ";
+							cin >> schoose;
+						}
+						specialization = speciality[schoose - 1];
+
+						D.checkDoctorSpecification(specialization);
+
+						int time;
+						cout << endl << endl;
+						cout << "    Enter exact name of doctor you want to book an appointmant with: ";
+						cin >> choosedoctor;
+						D.displayReviewDoctor(choosedoctor);
+						App.Bookings(choosedoctor, name, cnic);
+					}
+
+					else if (choice1 == 2)
+					{
+						int citychoose;
+						string listcities[3] = { "Karachi", "Islamabad", "Lahore" };
+						string city;
+						cout << endl << "      SELECT CITY   " << endl;
+						for (int i = 0; i < 3; i++)
+						{
+							cout << i + 1 << ". " << listcities[i] << endl;
+						}
+						cout << "   Choose: ";
+						cin >> citychoose;
+						while (citychoose < 1 || citychoose>3)
+						{
+							cout << "    Inavlid Input" << endl;
+							cout << "    Enter again: ";
+							cin >> citychoose;
+						}
+						city = listcities[citychoose - 1];
+
+						D.checkDoctorCity(city);
+						cout << endl << endl;
+						cout << "    Enter exact name of doctor you want to book an appointmant with: ";
+						cin >> choosedoctor;
+						D.displayReviewDoctor(choosedoctor);
+						App.Bookings(choosedoctor, name, cnic);
+
+					}
+
+					else if (choice1 == 3)
+					{
+						int hospitalchoose;
+						string hospital;
+						cout << endl << "      SELECT HOSPITAL   " << endl;
+						for (int i = 0; i < 15; i++)
+						{
+							cout << i + 1 << ". " << Hos[i].getHospitalName() << endl;
+						}
+						cout << "    Choose: ";
+						cin >> hospitalchoose;
+						while (hospitalchoose < 1 || hospitalchoose>15)
+						{
+							cout << "    Inavlid Input" << endl;
+							cout << "    Enter again: ";
+							cin >> hospitalchoose;
+						}
+						hospital = Hos[hospitalchoose - 1].getHospitalName();
+						cout << endl << endl;
+						D.checkDoctorHosp(hospital);
+
+						cout << "    Enter exact name of doctor you want to book an appointmant with: ";
+						cin >> choosedoctor;
+						D.displayReviewDoctor(choosedoctor);
+						App.Bookings(choosedoctor, name, cnic);
+
+					}
+					cout << "    Please rate the Doctor" << endl;
+					cout << "    1-5 Star:  " << endl;
+					cin >> star;
+					D.setReview(choosedoctor, name, star);
+
+					break;
+				case 2:
+					cout << "           * DOCTOR DETAILS *" << endl;
+					cout << "NAME            EMAIL               PHONENO            SPECIFICATION   HOSPITAL              CITY            WORKING HOURS   " << endl;
+
+					D.checkDoctorDetails();
+					break;
+
+				}
+
+			}
+			else if (choose == 2)
+			{
+			    cout << "     ......................................." << endl;
+				cout << "          ***/ Patient Login /*****" << endl;
+				cout << "     ......................................." << endl;
+				do
+				{
+					cout << "    Enter Username: ";
+					cin >> user_name;
+
+					if (P.CheckUsernamePatient(user_name))
+					{
+						cout << "    Password (8 characters): ";
+						cin >> pass;
+					}
+				} while (!P.CheckUsernamePatient(user_name));
+
+				do
+				{
+					if (!P.CheckPasswordPatient(pass))
+					{
+						pass = { NULL };
+						cout << endl << "    Wrong Password" << endl;
+						cout << "    Password (8 characters): ";
+						cin >> pass;
+					}
+				} while (!P.CheckPasswordPatient(pass));
+
+
+				do
+				{
+					cout << endl << endl << "     ------------------------------ " << endl;
+					cout << "          WELCOME TO Appointment Section  " << endl;
+					cout << "     ------------------------------ " << endl;
+					cout << endl << endl << endl;
+					cout << "    1. Book Appointments." << endl;
+					cout << "    2. View Appointments." << endl;
+					/////////////////////////
+					cout << "    0. exit." << endl;
+					cout << "    Choose: ";
+					cin >> schoose;
+					while (schoose < 0 || schoose>2)
+					{
+						cout << "    Incorrect input." << endl;
+						cout << "    Choose: ";
+						cin >> schoose;
+					}
+					if (schoose == 1)
+					{
+						cout << "    Enter your Name: ";
+						cin >> name;
+						cout << endl << "    ////**********////" << endl;
+						cout << "   Press: " << endl;
+						cout << "   1. Select Doctor by Specialisation" << endl;
+						cout << "   2. Select Doctor by City" << endl;
+						cout << "   3. Select Doctor by Hospital" << endl;
+						cout << "   CHOOSE: ";
+						cin >> choice1;
+						while (choice1 < 1 || choice1 > 3)
+						{
+							cout << "    Invalid input" << endl;
+							cout << "    Enter Again: ";
+							cin >> choice1;
+						}
+						if (choice1 == 1)
+						{
+							int schoose;
+							string speciality[4] = { "Gynecologist", "Detmatologist", "Oncologist", "Orthopedic" };
+							string specialization;
+							cout << "    SELECT SPECIFICATION  " << endl;
+							cout << "    Press: " << endl;
+							for (int i = 0; i < 4; i++)
+							{
+								cout << i + 1 << ". " << speciality[i] << endl;
+							}
+							cout << "    CHOOSE: ";
+							cin >> schoose;
+							while (schoose < 1 || schoose>4)
+							{
+								cout << "    Invalid input" << endl;
+								cout << "    Enter Again: ";
+								cin >> schoose;
+							}
+							specialization = speciality[schoose - 1];
+
+							D.checkDoctorSpecification(specialization);
+
+							int time;
+							cout << endl << endl;
+							cout << "    Enter exact name of doctor you want to book an appointmant with: ";
+							cin >> choosedoctor;
+							D.displayReviewDoctor(choosedoctor);
+							App.Bookings(choosedoctor, name, cnic);
+						}
+
+						else if (choice1 == 2)
+						{
+							int citychoose;
+							string listcities[3] = { "    Karachi", "    Islamabad", "    Lahore" };
+							string city;
+							cout << endl << "      SELECT CITY   " << endl;
+							for (int i = 0; i < 3; i++)
+							{
+								cout << i + 1 << ". " << listcities[i] << endl;
+							}
+							cout << "    Choose: ";
+							cin >> citychoose;
+							while (citychoose < 1 || citychoose>3)
+							{
+								cout << "    Inavlid Input" << endl;
+								cout << "    Enter again: ";
+								cin >> citychoose;
+							}
+							city = listcities[citychoose - 1];
+
+							D.checkDoctorCity(city);
+							cout << endl << endl;
+							cout << "    Enter exact name of doctor you want to book an appointmant with: ";
+							cin >> choosedoctor;
+							D.displayReviewDoctor(choosedoctor);
+							App.Bookings(choosedoctor, name, cnic);
+
+						}
+
+						else if (choice1 == 3)
+						{
+							int hospitalchoose;
+							string hospital;
+							cout << endl << "      SELECT HOSPITAL   " << endl;
+							for (int i = 0; i < 15; i++)
+							{
+								cout << i + 1 << ". " << Hos[i].getHospitalName() << endl;
+							}
+							cout << "    Choose: ";
+							cin >> hospitalchoose;
+							while (hospitalchoose < 1 || hospitalchoose>15)
+							{
+								cout << "    Inavlid Input" << endl;
+								cout << "    Enter again: ";
+								cin >> hospitalchoose;
+							}
+							hospital = Hos[hospitalchoose - 1].getHospitalName();
+							cout << endl << endl;
+							D.checkDoctorHosp(hospital);
+
+							cout << "    Enter exact name of doctor you want to book an appointmant with: ";
+							cin >> choosedoctor;
+							D.displayReviewDoctor(choosedoctor);
+							App.Bookings(choosedoctor, name, cnic);
+
+						}
+						cout << "    Please rate the Doctor" << endl;
+						cout << "    1-5 Star:  " << endl;
+						cin >> star;
+						D.setReview(choosedoctor, name, star);
+
+					}
+					else if (schoose == 2)
+					{
+						cout << "    Enter your Name: ";
+						cin >> patname;
+						App.displayPatientAppointment(patname);
+					}
+
+				} while (schoose != 0);
+			}
 		}
+
+
+
+		else if (choice == 3)
+		{
+			cout << "    ***/ Admin Login /*****" << endl;
+			do
+			{
+				cout << "    Enter Username: ";
+				cin >> user_name;
+
+				if (A.CheckUsernameAdmin(user_name))
+				{
+					cout << "    Password (8 characters): ";
+					cin >> pass;
+				}
+			} while (!A.CheckUsernameAdmin(user_name));
+
+			do
+			{
+				if (!A.CheckPasswordAdmin(pass))
+				{
+					pass = { NULL };
+					cout << endl << "    Wrong Password" << endl;
+					cout << "    Password (8 characters): ";
+					cin >> pass;
+				}
+			} while (!A.CheckPasswordAdmin(pass));
+
+			cout << endl << endl << endl;
+
+			int c1;
+			cout << "    1. View Doctor Details \n    2. View Patient Details \n    3. View Appointments\n    4. Cancel Appointments\nChoose: ";
+			cin >> c1;
+			while (c1 < 1 || c1>4)
+			{
+				cout << "    Inavlid Input\n Enter Again: ";
+				cin >> c1;
+			}
+			string n;
+			switch (c1)
+			{
+			case 1:
+				D.checkDoctorDetails();
+				break;
+			case 2:
+				cout << "NAME         CNIC          USERNAME " << endl;
+				P.checkPatientDetails();
+				break;
+			case 3:
+				App.displayAppointment();
+				break;
+			case 4:
+				App.displayAppointment();
+				cout << "    Enter name of the doctor whos appointment you want to delete" << endl;
+				cin >> n;
+				cout << "    ** Appointment Deleted **" << endl;
+				break;
+			default:
+				break;
+			}
+
+
+		}
+
+
+
+	} while (choice != 0);
 }
