@@ -40,7 +40,4 @@ class Patient:public User{
 
 		}
 	}
-    
-    }
-
-
+};
