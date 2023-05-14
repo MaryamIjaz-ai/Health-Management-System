@@ -1,17 +1,17 @@
+#pragma once
 #include<iostream>
 #include<fstream>
-#include "Appointment.h";
+#include"User.h"
+#include"Appointment.h"
 
-#include "User.h";
-
-using namespace std;
-class Doctor : public User         // inheritance from user class
+class Doctor :public user         // inheritance from user class
 {
 private:
 	Appointment* A = new Appointment;   // aggregation with appointment
 	string name, cnic, pass, username, email, phoneno, specification, city, hospital;
 	int stime, etime, experience;
 
+	string review;
 public:
 
 	string getName()
@@ -39,8 +39,8 @@ public:
 	{
 
 	}
-
-void setReview(string doc, string pat, string r)
+	//entering review
+	void setReview(string doc, string pat, string r)
 	{
 		review = r;
 		fstream doctorfile;

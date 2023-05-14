@@ -1,3 +1,4 @@
+
 #pragma once
 #include<iostream>
 #include"Appointment.h"
@@ -21,6 +22,12 @@ public:
 		return rating;
 	}
 
+	/*string Givereview(string r)
+	{
+		cout << "******Pease Enter a review*********" << endl;
+		cin >> r;
+		cout << "  " << r << endl;
+	}*/
 	void Updaterating()
 	{
 
