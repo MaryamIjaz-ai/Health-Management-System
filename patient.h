@@ -1,9 +1,12 @@
 #pragma once
 #include<iostream>
 #include<fstream>
-#include"User.h"
-#include"Appointment.h"
-#include"Payment.h"
+#include "admin.h";
+#include "Appointment.h";
+#include "Doctor.h";
+#include "patient.h";
+#include "User.h";
+#include "Hospital.h"
 class Patient:public User{
     string name, cnic;
     public:
