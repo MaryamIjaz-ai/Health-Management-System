@@ -2,7 +2,7 @@
 #include<iostream>
 #include"patient.h"
 
-class Payment { /// this class was created for payment but i didnt implemented here because i didnt calculated it i just hardcoated it
+class Payment { 
 private:
 	int totalBill;
 	string EGateway;
