@@ -1,4 +1,3 @@
-#pragma once
 #include<iostream>
 
 #include "admin.h";
@@ -6,6 +5,7 @@
 #include "Doctor.h";
 #include "patient.h";
 #include "User.h";
+#include "Hospital.h"
 using namespace std;
 
 int main()
@@ -554,7 +554,7 @@ else if (choice == 2)
 				cout << endl << endl << "     ---------------------------------------- " << endl;
 
 
-
+                
 				cout << "          WELCOME TO APPOINTMENT SECTION  " << endl;
 				cout << "     ------------------------------------------- " << endl;
 				cout << "    Press:" << endl;
