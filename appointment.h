@@ -1,8 +1,12 @@
 #pragma once
 #include<iostream>
-#include"Admin.h"
-#include"Doctor.h"
-#include"patient.h"
+#include<fstream>
+#include "admin.h";
+#include "Appointment.h";
+#include "Doctor.h";
+#include "patient.h";
+#include "User.h";
+#include "Hospital.h"
 
 class Appointment
 {
