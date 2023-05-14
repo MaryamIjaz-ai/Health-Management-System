@@ -4,7 +4,7 @@
 #include"User.h"
 #include"Appointment.h"
 #include"Payment.h"
-class Patient:public user{
+class Patient:public User{
     string name, cnic;
     public:
     patient(){
@@ -18,7 +18,29 @@ class Patient:public user{
     void checkPatientDetails(){
         string word,patientname,patientcnic,patientUsername,patientPassword;
        
-	}}
+	}
+    	void checkPatientDetails()
+	{
+		string word, patientname, patientcnic, patientUsername, patientPassword;
+		fstream doctorfile;
+		doctorfile.open("Doctor.txt", ios::in);
+
+		while (!doctorfile.eof())
+		{
+			getline(doctorfile, word);
+			stringstream w(word);
+			w >> patientname;
+			w >> patientcnic;
+			w >> patientUsername;
+			w >> patientPassword;
 
 
+			cout <<     patientname << "    " <<     patientcnic << "     " <<     patientUsername << endl;
+
+
+		}
+	}
     
+    }
+
+
