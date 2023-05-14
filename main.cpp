@@ -12,7 +12,6 @@ using namespace std;
 #include "Doctor.h";
 #include "Feedback.h";
 #include "patient.h";
-#include "Payment.h";
 #include "User.h";
 #include "Feedback.h";
 
