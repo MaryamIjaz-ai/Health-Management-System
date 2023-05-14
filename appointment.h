@@ -6,7 +6,7 @@
 #include "Doctor.h";
 #include "patient.h";
 #include "User.h";
-#include "Hospital.h"
+#include "Hospital.h";
 
 class Appointment
 {
