@@ -240,7 +240,7 @@ else if (mod == "    In-Person_Consultation")
 						appfile << endl;
 					}
 					cout << endl << "    *** Appointment Made Successful ***" << endl;
-					cout << day << "  " << time << "-" << time + 1 << " PM" << "  Payment: Done" << endl << endl;
+					cout << day << "  " << time << "-" << time + 1 << " PM" << "  Payment: Done" << endl;
 				}
 				else if (pay == 2)
 				{
