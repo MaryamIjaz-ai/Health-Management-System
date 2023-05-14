@@ -1,3 +1,7 @@
+//..................................OOP FINAL PROJECT..........................
+//..................................NAME:MAHAM KHURRAM.........................
+//..................................ROLL-NO:21I-0681...........................
+
 using namespace std;
 #include <iostream>
 #include<string>
@@ -12,8 +16,8 @@ using namespace std;
 #include "Doctor.h";
 #include "Feedback.h";
 #include "patient.h";
+#include "Payment.h";
 #include "User.h";
-#include "Feedback.h";
 
 
 
@@ -97,12 +101,13 @@ int main()
 		Hos[i].setHospitalName(hospitalname[i]);
 	}
 
-do
+
+	do
 	{    //  implementing  menu 
 		do
 		{
 			cout << "    -----------------------------------" << endl;
-			cout << "                 HOSPITAL MANAGEMENT SYSTEM         " << endl;
+			cout << "                 OLADOC               " << endl;
 			cout << "    -----------------------------------" << endl;
 			cout << "      What category do you belong to" << endl;
 			cout << "       1.Doctor" << endl;
@@ -115,11 +120,11 @@ do
 		if (choice == 1)
 		{
 			cout << endl << endl << "     ------------------------------ " << endl;
-			cout << "           HOSPITAL MANAGEMENT SYSTEM      " << endl;
+			cout << "          WELCOME TO OLADOC  " << endl;
 			cout<< "     ------------------------------ " << endl;
 			cout  << "      Do you want to: " << endl;
 			cout << "        1.Register" << endl;
-			//cout << "        2.Login" << endl;
+			cout << "        2.Login" << endl;
 			cout << endl << "     CHOOSE: ";
 			cin >> choose;
 
@@ -276,9 +281,9 @@ do
 				}
 				cout << "      *** Successfull Registration ***" << endl;
 				//using namespace std::this_thread;
-				//using namespace std::chrono_literals;
-				//using std::chrono::system_clock;
-//
+				using namespace std::chrono_literals;
+				using std::chrono::system_clock;
+
 				//sleep_for(10ns);
 				//sleep_until(system_clock::now() + 1s);
 
@@ -398,17 +403,20 @@ do
 			{
 			cout << "     ......................................." << endl;
 				cout << "        ***/ Doctor Login /*****" << endl;
-				cout << "     ......................................." << endl
+				cout << "     ......................................." << endl;
+
 				do
 				{
 					cout << "    Enter Username: ";
-					cin >> user_name
+					cin >> user_name;
+
 					if (D.CheckUsernameDoctor(user_name))
 					{
 						cout << "    Password (8 characters): ";
 						cin >> pass;
 					}
-				} while (!D.CheckUsernameDoctor(user_name))
+				} while (!D.CheckUsernameDoctor(user_name));
+
 				do
 				{
 					if (!D.CheckPasswordDoctor(pass))
@@ -418,10 +426,12 @@ do
 						cout << "    Password (8 characters): ";
 						cin >> pass;
 					}
-				} while (!D.CheckPasswordDoctor(pass))
+				} while (!D.CheckPasswordDoctor(pass));
+
 				cout << endl << endl << endl;
 				cout << "    1. View Appointments" << endl;
-				cout << "    2. Cancel Appointment" << endl
+				cout << "    2. Cancel Appointment" << endl;
+
 				cout << "    Choose: ";
 				cin >> schoose;
 				while (schoose < 1 || schoose>2)
@@ -435,10 +445,12 @@ do
 				case 1:
 					cout << "    Enter your Name: ";
 					cin >> docname;
-					App.displayDoctorAppointment(docname)
+					App.displayDoctorAppointment(docname);
+
 					break;
 				case 2:
-					/////////////////////////////////////////////////////////////////////////
+					//////////////////////////////////////////////////////////////////////////
+
 					break;
 				default:
 					break;
@@ -448,16 +460,17 @@ do
 			}
 
 
-    }
-}
-else if (choice == 2)
+		}
+		//------------------------------------------------------------------------------------------------------------//
+		//Coming to patient setup.....
+		else if (choice == 2)
 		{
 		 cout << endl << endl << "     ------------------------------ " << endl;
-		 cout << "           HOSPITAL MANAGEMENT SYSTEM  " << endl;
+		 cout << "          WELCOME TO OLADOC  " << endl;
 		 cout << "     ------------------------------ " << endl;
 			cout << "    Do you want to: " << endl;
 			cout << "     1.Register" << endl;
-			//cout << "     2.Login" << endl;
+			cout << "     2.Login" << endl;
 			cout << "    CHOOSE" << endl;
 			cin >> choose;
 			if (choose == 1)
@@ -592,9 +605,6 @@ else if (choice == 2)
 				int c, choice1;
 				cout << endl << endl << "    ******// Registration Complete //******" << endl << endl;
 				cout << endl << endl << "     ---------------------------------------- " << endl;
-
-
-                
 				cout << "          WELCOME TO APPOINTMENT SECTION  " << endl;
 				cout << "     ------------------------------------------- " << endl;
 				cout << "    Press:" << endl;
@@ -964,3 +974,4 @@ else if (choice == 2)
 
 
 	} while (choice != 0);
+}
