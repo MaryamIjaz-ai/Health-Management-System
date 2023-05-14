@@ -1,5 +1,5 @@
+#pragma once
 #include<iostream>
-using namespace std;
 #include"Admin.h"
 #include"Doctor.h"
 #include"patient.h"
