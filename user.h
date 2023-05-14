@@ -1,57 +1,75 @@
-
 #pragma once
-#include <iostream>
+#include<iostream>
+#include<string>
 #include<fstream>
 #include<sstream>
-#include <string>
+using namespace std;
 
-class User{
+
+class user {                           //the main class
 private:
-string cnic;
-string name;
-string phone_no;
-string password;
-int age;
+	string cnic;
+	string name;
+	int age;
+	string phone_no;
+	string password;
 
-User(){
-    cnic = "NULL";
-    name= "NULL";
-    age =0;
-    phone_no= "NULL";
-    password="NULL";
-}
-string getCnic(){
-    return cnic;
-}
-string getName(){
-    return name;
-}
-string getPhoneno(){
-    return phone_no;
-}
-string getPass(){
-    return password;
-}
-int getAge(){
-    return age;
-}
-void setName( string n){
-    name= n;
-}
-void getCnic( string c){
-    cnic = c;
-}
-void setPhoneno( string p){
-    phone_no=p;
-}
-void setPass(string pass){
-    pass= password;
-}
-void setAge( int a){
-    age =a;
-}
+public:
 
-void PatientstoreData(string name, string cnic, string user_name, string pass)    //function to store the data of patients in a file
+
+	user()
+	{
+		cnic = "NULL";
+		name = "NULL";
+		age = 0;
+		phone_no = "NULL";
+		password = "NULL";
+	}
+	string getCnic()
+	{
+		return cnic;
+	}
+	string getName()
+	{
+		return name;
+	}
+	string getPhoneno()
+	{
+		return phone_no;
+	}
+	string getPass()
+	{
+		return password;
+	}
+	int getAge()
+	{
+		return age;
+	}
+	void setName(string n)
+	{
+		name = n;
+	}
+	void setCnic(string c)
+	{
+		cnic = c;
+	}
+	void setPhoneno(string p)
+	{
+		p = phone_no;
+	}
+	void setPass(string pass)
+	{
+		pass = password;
+	}
+	void setAge(int a)
+	{
+		age = a;
+	}
+
+	//////////////////////////////////// Function For Patients //////////////////////////////////////
+	 
+	// storing data
+	void PatientstoreData(string name, string cnic, string user_name, string pass)    //function to store the data of patients in a file
 	{
 		fstream patientfile;
 		patientfile.open("Patient.txt", ios::app);
@@ -340,6 +358,5 @@ void PatientstoreData(string name, string cnic, string user_name, string pass)  
 
 	}
 
+
 };
-
-
