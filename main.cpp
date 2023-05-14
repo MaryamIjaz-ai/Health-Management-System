@@ -1,5 +1,5 @@
 #include<iostream>
-
+#include"hospital.h"
 #include "admin.h";
 #include "Appointment.h";
 #include "Doctor.h";
