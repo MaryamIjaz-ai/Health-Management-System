@@ -1,4 +1,3 @@
-
 using namespace std;
 #include <iostream>
 #include<string>
@@ -8,11 +7,56 @@ using namespace std;
 #include <chrono>
 #include <thread>
 
-#include "admin.h";
+#include "Admin.h";
 #include "Appointment.h";
 #include "Doctor.h";
+#include "Feedback.h";
 #include "patient.h";
+#include "Payment.h";
 #include "User.h";
+#include "Feedback.h";
+
+
+
+class Hospitals
+{
+private:
+	string city, hospitalname;
+
+public:
+	int no_of_hospitals = 15;
+	Hospitals()
+	{
+
+	}
+	Hospitals(string c, string h)
+	{
+		city = c;
+		hospitalname = h;
+	}
+	void setCity(string c)
+	{
+		city = c;
+	}
+	void setHospitalName(string hn)
+	{
+		hospitalname = hn;
+	}
+
+	string getCity()
+	{
+		return city;
+	}
+	string getHospitalName()
+	{
+		return hospitalname;
+	}
+
+};
+
+
+
+
 
 int main()
 {
