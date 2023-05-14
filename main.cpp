@@ -1,3 +1,4 @@
+#pragma once
 #include<iostream>
 
 #include "admin.h";
@@ -553,7 +554,7 @@ else if (choice == 2)
 				cout << endl << endl << "     ---------------------------------------- " << endl;
 
 
-                
+
 				cout << "          WELCOME TO APPOINTMENT SECTION  " << endl;
 				cout << "     ------------------------------------------- " << endl;
 				cout << "    Press:" << endl;
