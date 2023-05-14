@@ -1,3 +1,4 @@
+
 using namespace std;
 #include <iostream>
 #include<string>
@@ -6,6 +7,7 @@ using namespace std;
 #include<conio.h>
 #include <chrono>
 #include <thread>
+
 
 #include "Admin.h";
 #include "Appointment.h";
@@ -913,23 +915,23 @@ int main()
 				cout << "    Enter Username: ";
 				cin >> user_name;
 
-				if (A.CheckUsernameAdmin(user_name))
+				if(true)//(A.CheckUsernameAdmin(user_name))
 				{
 					cout << "    Password (8 characters): ";
 					cin >> pass;
 				}
-			} while (!A.CheckUsernameAdmin(user_name));
+			} while (true); // (!A.CheckUsernameAdmin(user_name));
 
 			do
 			{
-				if (!A.CheckPasswordAdmin(pass))
+				if (true )//!A.CheckPasswordAdmin(pass))
 				{
 					pass = { NULL };
 					cout << endl << "    Wrong Password" << endl;
 					cout << "    Password (8 characters): ";
 					cin >> pass;
 				}
-			} while (!A.CheckPasswordAdmin(pass));
+			} while (true); //! A.CheckPasswordAdmin(pass));
 
 			cout << endl << endl << endl;
 
