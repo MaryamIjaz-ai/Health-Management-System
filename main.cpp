@@ -13,6 +13,7 @@ using namespace std;
 #include "Doctor.h";
 #include "patient.h";
 #include "User.h";
+#include "Feedback.h";
 
 int main()
 {
