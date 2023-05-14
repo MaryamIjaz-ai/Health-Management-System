@@ -7,7 +7,7 @@
 #include"Appointment.h"
 
 
-class Admin :public User{
+class Admin :public user{
 protected:
 	int staffID;
 public:
